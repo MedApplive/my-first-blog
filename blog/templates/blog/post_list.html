@@ -9,23 +9,14 @@
       <h1><a href="/">Maurices Blog</a></h1>
     </div>
 
-      <div>
-        <p>published: 24.03.2019</p>
-        <h2><a href="">My first post</a></h2>
-        <p>My first post here. The quick brown dogs etc.</p>
-      </div>
+    {% for post in posts %}
+    <div>
+      <p>published: {{ post.published_date}}</p>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
 
-      <div>
-        <p>published: 24.03.2019, 20:47</p>
-        <h2><a href="">My second post</a></h2>
-        <p>This is my second post. What was it that you said the quick brown dogs did?</p>
-      </div>
-
-      <div>
-        <p>published: 24.03.2019, 20:51</p>
-        <h2><a href="">My third post</a></h2>
-        <p>This is my third post. Sorry it was the foxes and not the dogs and they jumped over the lazy dogs</p>
-      </div>
+    </div>
+      {%  endfor %}
 
 
 
